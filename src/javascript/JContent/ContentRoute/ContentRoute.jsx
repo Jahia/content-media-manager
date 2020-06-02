@@ -10,14 +10,16 @@ import ContentSearchTitle from './ContentSearchTitle';
 import ContentStatuses from './ContentStatuses';
 import {MainActionBar} from './MainActionBar';
 import JContentConstants from '../JContent.constants';
+import {EditFrame} from './ContentLayout/EditFrame/EditFrame';
 
 const ContentRoute = () => {
-    const {mode} = useSelector(state => ({
-        mode: state.jcontent.mode
+    const {mode, pagesMode} = useSelector(state => ({
+        mode: state.jcontent.mode,
+        pagesMode: state.jcontent.pagesMode
     }));
 
     const inSearchMode = JContentConstants.mode.SEARCH === mode || JContentConstants.mode.SQL2SEARCH === mode;
-
+    const inEditMode = JContentConstants.mode.PAGES === mode && JContentConstants.pagesMode.VIEW === pagesMode;
     return (
         <MainLayout
             header={
@@ -30,7 +32,7 @@ const ContentRoute = () => {
                 />
             }
         >
-            { mode.length > 0 && <ContentLayout/> }
+            { mode.length > 0 && inEditMode ? <EditFrame/> : <ContentLayout/> }
         </MainLayout>
     );
 };

@@ -87,7 +87,7 @@ export const PasteActionComponent = withNotifications()(({context, render: Rende
         }
 
         if (contentTypesResult.loading || shouldCallQuery) {
-            return <Loading context={context}/>;
+            return (Loading && <Loading context={context}/>) || false;
         }
 
         isEnabled = contentTypesResult.data.jcr.nodeTypesByNames.reduce((acc, val) => {

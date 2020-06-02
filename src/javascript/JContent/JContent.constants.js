@@ -30,7 +30,12 @@ const JContentConstants = {
         THUMBNAIL: 'thumbnail',
         DETAILED: 'detailed',
         LIST: 'listview'
+    },
+    pagesMode: {
+        LIST: 'list',
+        VIEW: 'view'
     }
+
 };
 
 export default JContentConstants;

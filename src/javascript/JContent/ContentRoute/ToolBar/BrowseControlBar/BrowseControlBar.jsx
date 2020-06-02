@@ -6,6 +6,7 @@ import JContentConstants from '../../../JContent.constants';
 import {getButtonRenderer} from '~/utils/getButtonRenderer';
 import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
+import PagesModeSelector from '../PagesModeSelector/PagesModeSelector';
 
 const ButtonRenderer = getButtonRenderer({size: 'default', variant: 'ghost'});
 const ButtonRendererNoLabel = getButtonRenderer({labelStyle: 'none', size: 'default', variant: 'ghost'});
@@ -52,6 +53,8 @@ export const BrowseControlBar = ({showActions}) => {
             <div className="flexFluid"/>
             {showActions && mode === JContentConstants.mode.MEDIA &&
             <FileModeSelector/>}
+            {showActions && mode === JContentConstants.mode.PAGES &&
+            <PagesModeSelector/>}
         </React.Fragment>
     );
 };
