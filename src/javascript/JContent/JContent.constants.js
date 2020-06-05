@@ -33,7 +33,8 @@ const JContentConstants = {
     },
     pagesMode: {
         LIST: 'list',
-        VIEW: 'view'
+        VIEW: 'view',
+        VIEW_DEVICE: 'view_device'
     }
 
 };
