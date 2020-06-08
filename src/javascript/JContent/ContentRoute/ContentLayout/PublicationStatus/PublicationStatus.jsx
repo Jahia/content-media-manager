@@ -89,12 +89,12 @@ const styles = theme => ({
 
 export class PublicationStatus extends Component {
     render() {
-        const {classes, node, t, i18n} = this.props;
+        const {classes, node, t, i18n, style} = this.props;
         const publicationStatus = publicationStatusByName.getStatus(node);
         const publicationStatusClass = publicationStatus.getContentClass(classes);
         if (node.operationsSupport.publication) {
             return (
-                <div className={classes.root}>
+                <div className={classes.root} style={style}>
                     <div className={classNames(classes.border, publicationStatusClass)}/>
                     <div className={classNames(classes.publicationInfoWrapper, publicationStatusClass)}>
                         <div className={classes.publicationInfo}
@@ -118,6 +118,7 @@ export class PublicationStatus extends Component {
 
 PublicationStatus.propTypes = {
     node: PropTypes.object.isRequired,
+    style: PropTypes.any,
     classes: PropTypes.object.isRequired,
     t: PropTypes.func.isRequired,
     i18n: PropTypes.object.isRequired
