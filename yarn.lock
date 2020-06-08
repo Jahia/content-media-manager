@@ -1041,17 +1041,10 @@
     mdi-material-ui "^5.10.0"
     recompose "^0.30.0"
 
-<<<<<<< HEAD
 "@jahia/moonstone@^0.16.0":
   version "0.16.0"
   resolved "https://npm.jahia.com/@jahia%2fmoonstone/-/moonstone-0.16.0.tgz#d3c32d0a2a6a1010acf2c0b6c1f52e8625677d6f"
   integrity sha512-ufLTmiVIDxnRZNh+KJaLOpdqZDKYUC3ArsY8/QMIIv939Uw28TRI3SExbeVH1emnpCUk6gnn5h83Jv3csNGDnQ==
-=======
-"@jahia/moonstone@0.15.12-canary.4b00664":
-  version "0.15.12-canary.4b00664"
-  resolved "https://npm.jahia.com/@jahia%2fmoonstone/-/moonstone-0.15.12-canary.4b00664.tgz#57782b56436e637a8449dc95caf021ea90249b92"
-  integrity sha512-BVLr/OOZ5EOTMUPcKz8hPVTMKzI/Wpve0EKdwPBiHVRSJgwXASrqD4nF1padf0PaMgPbn/RsOpPLCJMkoThT5Q==
->>>>>>> Page composer POC
   dependencies:
     clsx "^1.0.4"
     prop-types "^15.7.2"
