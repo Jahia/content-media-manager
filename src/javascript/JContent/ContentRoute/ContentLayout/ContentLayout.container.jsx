@@ -57,6 +57,7 @@ export const ContentLayoutContainer = ({
     setPreviewSelection,
     setPath,
     filesMode,
+    listMode,
     previewState,
     previewSelection
 }) => {
@@ -240,6 +241,7 @@ export const ContentLayoutContainer = ({
             <ContentLayout mode={mode}
                            path={path}
                            filesMode={filesMode}
+                           listMode={listMode}
                            previewState={previewState}
                            previewSelection={previewSelection}
                            rows={rows}
@@ -262,6 +264,7 @@ const mapStateToProps = state => ({
     uilang: state.uilang,
     params: state.jcontent.params,
     filesMode: state.jcontent.filesGrid.mode,
+    listMode: state.jcontent.filesGrid.listMode,
     pagination: state.jcontent.pagination,
     sort: state.jcontent.sort,
     openedPaths: state.jcontent.openPaths,
@@ -294,6 +297,7 @@ ContentLayoutContainer.propTypes = {
     uilang: PropTypes.string.isRequired,
     previewState: PropTypes.number.isRequired,
     filesMode: PropTypes.string.isRequired,
+    listMode: PropTypes.string.isRequired,
     selection: PropTypes.array.isRequired,
     removeSelection: PropTypes.func.isRequired,
     switchSelection: PropTypes.func.isRequired

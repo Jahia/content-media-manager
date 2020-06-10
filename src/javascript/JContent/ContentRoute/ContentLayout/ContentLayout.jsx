@@ -11,6 +11,7 @@ import {CM_DRAWER_STATES} from '../../JContent.redux';
 import FilesGrid from './FilesGrid';
 import JContentConstants from '../../JContent.constants';
 import contentManagerStyleConstants from '../../JContent.style-constants';
+import ContentStructuredList from './ContentStructuredList';
 
 const styles = theme => ({
     root: {
@@ -83,7 +84,7 @@ const styles = theme => ({
 export class ContentLayout extends React.Component {
     render() {
         const {
-            mode, path, previewState, classes, filesMode, previewSelection, rows, contentNotFound,
+            mode, path, previewState, classes, filesMode, listMode, previewSelection, rows, contentNotFound,
             totalCount, loading
         } = this.props;
 
@@ -121,11 +122,14 @@ export class ContentLayout extends React.Component {
                                 <FilesGrid totalCount={totalCount}
                                            rows={rows}
                                            contentNotFound={contentNotFound}
-                                           loading={loading}/> :
-                                <ContentListTable totalCount={totalCount}
-                                                  rows={rows}
-                                                  contentNotFound={contentNotFound}
-                                                  loading={loading}/>}
+                                           loading={loading}/> : (listMode === JContentConstants.listMode.FLAT_LIST ?
+                                        <ContentListTable totalCount={totalCount}
+                                                          rows={rows}
+                                                          contentNotFound={contentNotFound}
+                                                          loading={loading}/> :
+                                        <ContentStructuredList path={path}/>
+                                )
+                            }
                         </Paper>
                     </div>
                 </div>
@@ -139,6 +143,7 @@ ContentLayout.propTypes = {
     path: PropTypes.string.isRequired,
     classes: PropTypes.object.isRequired,
     filesMode: PropTypes.string.isRequired,
+    listMode: PropTypes.string.isRequired,
     previewState: PropTypes.number.isRequired,
     previewSelection: PropTypes.string,
     rows: PropTypes.array.isRequired,

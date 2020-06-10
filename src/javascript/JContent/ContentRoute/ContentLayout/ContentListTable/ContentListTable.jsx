@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Badge, Checkbox, Table, TableBody, TableCell, TableRow, Tooltip, withStyles} from '@material-ui/core';
 import {Typography} from '@jahia/design-system-kit';
 import {Lock} from '@material-ui/icons';
-import {Folder, Wrench} from 'mdi-material-ui';
+import {Wrench} from 'mdi-material-ui';
 import ContentListHeader from './ContentListHeader';
 import {ContextualMenu, DisplayAction, DisplayActions} from '@jahia/ui-extender';
 import {iconButtonRenderer, Pagination} from '@jahia/react-material';
@@ -31,7 +31,7 @@ import JContentConstants from '../../../JContent.constants';
 import ContentListEmptyDropZone from './ContentListEmptyDropZone';
 import ContentNotFound from './ContentNotFound';
 import EmptyTable from './EmptyTable';
-import {DocumentIcon, FileIcon, ImageIcon, ZipIcon} from '../icons';
+import {getMediaIcon} from '../ContentLayout.utils';
 import {useKeyboardNavigation} from '../useKeyboardNavigation';
 
 const allColumnData = [
@@ -261,33 +261,6 @@ const getCellClasses = (node, classes, column, isSelected, isPreviewOpened) => {
             }
         )
     };
-};
-
-const addIconSuffix = icon => {
-    return (icon.includes('.png') ? icon : icon + '.png');
-};
-
-const getMediaIcon = (node, classes) => {
-    switch (node.primaryNodeType.displayName) {
-        case 'Folder':
-            return <Folder className={classes.icon}/>;
-        case 'File':
-            if (node.mixinTypes.length !== 0 && !_.isEmpty(node.mixinTypes.filter(mixin => mixin.name === 'jmix:image'))) {
-                return <ImageIcon className={classes.icon}/>;
-            }
-
-            if (node.name.match(/.zip$/g) || node.name.match(/.tar$/g) || node.name.match(/.rar$/g)) {
-                return <ZipIcon className={classes.icon}/>;
-            }
-
-            if (node.mixinTypes.length !== 0 && !_.isEmpty(node.mixinTypes.filter(mixin => mixin.name === 'jmix:document'))) {
-                return <DocumentIcon className={classes.icon}/>;
-            }
-
-            return <FileIcon className={classes.icon}/>;
-        default:
-            return <img src={addIconSuffix(node.primaryNodeType.icon)}/>;
-    }
 };
 
 export const ContentListTable = ({

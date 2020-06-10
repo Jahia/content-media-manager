@@ -27,6 +27,16 @@ const PickerItemsFragment = {
                 name
             }
         }`
+    },
+    primaryNodeTypeWithIcon: {
+        applyFor: 'node',
+        gql: gql`fragment PrimaryNodeTypeWithIcon on JCRNode {
+            primaryNodeType {
+                name
+                displayName(language: $language)
+                icon
+            }
+        }`
     }
 };
 

@@ -107,7 +107,9 @@
         "fileInfo": "Size:",
         "listview": "List view",
         "thumbnail": "Thumbnail",
-        "detailed": "Detailed view"
+        "detailed": "Detailed view",
+        "flatList": "List view",
+        "structuredList": "Structured list"
       },
       "search": {
         "advanced": "Advanced search",

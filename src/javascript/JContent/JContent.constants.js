@@ -24,12 +24,17 @@ const JContentConstants = {
     },
     localStorageKeys: {
         filesSelectorMode: 'jcontent_files_selector_mode',
-        filesSelectorGridMode: 'jcontent_files_selector_grid_mode'
+        filesSelectorGridMode: 'jcontent_files_selector_grid_mode',
+        pagesSelectorListMode: 'jcontent_pages_selector_list_mode'
     },
     gridMode: {
         THUMBNAIL: 'thumbnail',
         DETAILED: 'detailed',
         LIST: 'listview'
+    },
+    listMode: {
+        FLAT_LIST: 'flatList',
+        STRUCTURED_LIST: 'structuredList'
     }
 };
 

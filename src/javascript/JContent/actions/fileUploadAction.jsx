@@ -54,7 +54,7 @@ export const FileUploadActionComponent = ({context, render: Render, loading: Loa
 
     useEffect(() => {
         componentRenderer.render('upload-' + key, Upload, {actionKey: key, uploadType});
-    }, [key, componentRenderer]);
+    }, [key, componentRenderer, uploadType]);
 
     if (res.loading) {
         return (Loading && <Loading context={context}/>) || false;
