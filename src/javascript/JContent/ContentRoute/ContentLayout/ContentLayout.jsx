@@ -123,13 +123,12 @@ export class ContentLayout extends React.Component {
                                            rows={rows}
                                            contentNotFound={contentNotFound}
                                            loading={loading}/> : (listMode === JContentConstants.listMode.FLAT_LIST ?
-                                        <ContentListTable totalCount={totalCount}
-                                                          rows={rows}
-                                                          contentNotFound={contentNotFound}
-                                                          loading={loading}/> :
-                                        <ContentStructuredList path={path}/>
-                                )
-                            }
+                                               <ContentListTable totalCount={totalCount}
+                                                                 rows={rows}
+                                                                 contentNotFound={contentNotFound}
+                                                                 loading={loading}/> :
+                                               <ContentStructuredList path={path}/>
+                                )}
                         </Paper>
                     </div>
                 </div>
