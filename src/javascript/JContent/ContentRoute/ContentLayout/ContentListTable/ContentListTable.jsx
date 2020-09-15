@@ -6,7 +6,8 @@ import {Lock} from '@material-ui/icons';
 import {Folder, Wrench} from 'mdi-material-ui';
 import ContentListHeader from './ContentListHeader';
 import {ContextualMenu, DisplayAction, DisplayActions} from '@jahia/ui-extender';
-import {iconButtonRenderer, Pagination} from '@jahia/react-material';
+import {iconButtonRenderer} from '@jahia/react-material';
+import {Pagination} from '../Pagination';
 import * as _ from 'lodash';
 import {useTranslation} from 'react-i18next';
 import PublicationStatus from '../PublicationStatus';
@@ -610,10 +611,6 @@ export const ContentListTable = ({
                     totalCount={totalCount}
                     pageSize={pagination.pageSize}
                     currentPage={pagination.currentPage}
-                    labels={{
-                      labelRowsPerPage: t('jcontent:label.pagination.rowsPerPage'),
-                      of: t('jcontent:label.pagination.of')
-                    }}
                     onChangeRowsPerPage={setPageSize}
                     onChangePage={setCurrentPage}
                 />

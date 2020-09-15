@@ -13,7 +13,8 @@ import {Dialog,
     FormHelperText,
     withStyles
 } from '@material-ui/core';
-import {FormControlLabel, Typography, Button} from '@jahia/design-system-kit';
+import {FormControlLabel, Typography} from '@jahia/design-system-kit';
+import {Button} from '@jahia/moonstone';
 
 const styles = theme => ({
     margins: {
@@ -107,19 +108,21 @@ export class Export extends React.Component {
                     </div>
                 </DialogContent>
                 <DialogActions>
-                    <Button variant="secondary" onClick={onClose}>
-                        {t('jcontent:label.contentManager.fileUpload.dialogRenameCancel')}
-                    </Button>
-                    <Button
-                        variant="primary"
-                        data-cm-role="export-button"
-                        onClick={() => {
-                            this.triggerExport(path);
-                            onClose();
-                        }}
-                    >
-                        {t('jcontent:label.contentManager.export.actionLabel')}
-                    </Button>
+                    <Button label={t('jcontent:label.contentManager.fileUpload.dialogRenameCancel')}
+                            size="big"
+                            variant="outlined"
+                            onClick={onClose}
+                    />
+                    <Button label={t('jcontent:label.contentManager.export.actionLabel')}
+                            color="accent"
+                            size="big"
+                            variant="default"
+                            data-cm-role="export-button"
+                            onClick={() => {
+                                this.triggerExport(path);
+                                onClose();
+                            }}
+                    />
                 </DialogActions>
             </Dialog>
         );

@@ -5,7 +5,7 @@ import {useTranslation} from 'react-i18next';
 import FileCard from './FileCard';
 import {Grid, Paper, withStyles} from '@material-ui/core';
 import {Typography} from '@jahia/design-system-kit';
-import {Pagination} from '@jahia/react-material';
+import {Pagination} from '../Pagination';
 import UploadTransformComponent from '../UploadTransformComponent';
 import {connect} from 'react-redux';
 import {cmSetPage, cmSetPageSize} from '../pagination.redux';
@@ -157,10 +157,6 @@ export const FilesGrid = ({
                 totalCount={totalCount}
                 pageSize={pagination.pageSize}
                 currentPage={pagination.currentPage}
-                labels={{
-                    labelRowsPerPage: t('jcontent:label.pagination.rowsPerPage'),
-                    of: t('jcontent:label.pagination.of')
-                }}
                 onChangePage={setCurrentPage}
                 onChangeRowsPerPage={setPageSize}
             />
