@@ -47,7 +47,7 @@ export default function () {
             return 'Loading...';
         }
 
-        let defaultMode = JContentConstants.mode.PAGES;
+        let defaultMode = '';
 
         if (!permissions.node.pagesAccordionAccess && !permissions.node.contentFolderAccordionAccess && !permissions.node.mediaAccordionAccess && !permissions.node.formAccordionAccess) {
             defaultMode = JContentConstants.mode.APPS;
@@ -57,6 +57,8 @@ export default function () {
             defaultMode = JContentConstants.mode.MEDIA;
         } else if (!permissions.node.pagesAccordionAccess) {
             defaultMode = JContentConstants.mode.CONTENT_FOLDERS;
+        } else {
+            defaultMode = JContentConstants.mode.PAGES;
         }
 
         return (
