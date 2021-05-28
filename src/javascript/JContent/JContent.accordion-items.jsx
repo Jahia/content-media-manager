@@ -53,6 +53,7 @@ export const jContentAccordionItems = registry => {
         icon: <File/>,
         label: 'label.contentManager.navigation.pages',
         defaultPath: siteKey => '/sites/' + siteKey,
+        requiredPermission: 'pagesAccordionAccess',
         config: {
             hideRoot: true,
             rootPath: '',
@@ -68,6 +69,7 @@ export const jContentAccordionItems = registry => {
         targets: ['jcontent:60'],
         icon: <FolderSpecial/>,
         label: 'label.contentManager.navigation.contentFolders',
+        requiredPermission: 'contentFolderAccordionAccess',
         defaultPath: siteKey => '/sites/' + siteKey + '/contents',
         config: {
             rootPath: '/contents',
@@ -83,6 +85,7 @@ export const jContentAccordionItems = registry => {
         targets: ['jcontent:70'],
         icon: <Collections/>,
         label: 'label.contentManager.navigation.media',
+        requiredPermission: 'mediaAccordionAccess',
         defaultPath: siteKey => '/sites/' + siteKey + '/files',
         config: {
             rootPath: '/files',
@@ -99,6 +102,7 @@ export const jContentAccordionItems = registry => {
         icon: <Grain/>,
         label: 'label.contentManager.navigation.apps.title',
         appsTarget: 'jcontent',
-        isEnabled: siteKey => siteKey !== 'systemsite'
+        isEnabled: siteKey => siteKey !== 'systemsite',
+        requiredPermission: 'additionalAccordionAccess'
     });
 };
